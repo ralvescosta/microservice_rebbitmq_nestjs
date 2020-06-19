@@ -1,9 +1,5 @@
 # Simple Microservices communication with RebbitMQ and NestJS
 
-## Definitions
-
-For you to use this repository easily, initially install the docker and docker-compose.
-
 ## Description
 
 Microservices were built using the NestJS framework being instantiated as a hybrid application.
