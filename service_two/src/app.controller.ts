@@ -1,18 +1,20 @@
 import { Controller, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { EventPattern, Payload, Ctx, RmqContext } from '@nestjs/microservices';
+import {
+  AmqpConnection,
+  InjectRabbitMQConfig,
+} from '@golevelup/nestjs-rabbitmq';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly amqpConnection: AmqpConnection) {}
 
-  @Post('/sendMessage/one')
-  sendHelloWord(): Promise<string> {
-    return this.appService.sendHelloWord();
-  }
-
-  @EventPattern('message_printed')
-  async receivedHello(@Payload() data: any, @Ctx() context: RmqContext): Promise<any> {
-    return this.appService.receivedHelloWord(data,context)
+  @Post('/')
+  sendHelloWord(): Promise<any> {
+    this.amqpConnection.publish('teste', '1', {
+      helloWord: 'Hello Word',
+    });
+    return;
   }
 }

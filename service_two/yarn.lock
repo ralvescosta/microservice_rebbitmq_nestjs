@@ -325,6 +325,39 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@golevelup/nestjs-common@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-common/-/nestjs-common-1.4.2.tgz#5013776dc827fc1ba50224271fe426f7d5792644"
+  integrity sha512-mdXppMelEYO+HTilg4W8h8Bt4u1s9qvOip2dygRMxY3O1/JK6GPpPgJ99CiuAT+xxFG9igeN8lfpAnO0+mJXxA==
+  dependencies:
+    shortid "^2.2.14"
+
+"@golevelup/nestjs-discovery@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-discovery/-/nestjs-discovery-2.3.1.tgz#7e6f798888fb4b571ba413d3fc5c2bbc996800c7"
+  integrity sha512-K3NG34hK1/UM1ardiUSS9c43AAdk6IBJHUMZbBGavqfgNo17N2wjygSDMHFd5Cf+jqTPkt+n5Vr9ua22yCLzlg==
+  dependencies:
+    lodash "^4.17.15"
+
+"@golevelup/nestjs-modules@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-modules/-/nestjs-modules-0.4.1.tgz#e24bfa607b715d4df280de9ebcc52f7121cd48f7"
+  integrity sha512-v2GYGtJ8moTfhehavNFBwnHQ+QcgYHssxfqbJZcY4CUqB97E2sWmnAmtgscHDTvHqABOCaq2xvwfw4YTwZU2Ug==
+  dependencies:
+    shortid "^2.2.14"
+
+"@golevelup/nestjs-rabbitmq@^1.15.1":
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-rabbitmq/-/nestjs-rabbitmq-1.15.1.tgz#6fc68d0273a03a93f9ca8e5202b5b0796d75a37b"
+  integrity sha512-VSmeZuzz62mHXirsiDscw6jK6i9VtHKnhwQj9jHvCO7U9AlUWLTENwSxx6Gsvw3uksa9kzAnUabfHVcsdG//Tg==
+  dependencies:
+    "@golevelup/nestjs-common" "^1.4.2"
+    "@golevelup/nestjs-discovery" "^2.3.1"
+    "@golevelup/nestjs-modules" "^0.4.1"
+    amqp-connection-manager "^3.0.0"
+    amqplib "^0.5.3"
+    uuid "^3.3.2"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -637,6 +670,14 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@types/amqplib@^0.5.13":
+  version "0.5.13"
+  resolved "https://registry.yarnpkg.com/@types/amqplib/-/amqplib-0.5.13.tgz#a0dc9be08f38b91e5f7532acf0c89b0e515cdc6c"
+  integrity sha512-0r8cJfUajAlcHxlJsZyqRrSAYzv+pJPsaAQjDC6e5rACi3AOIuR0AfevJG7NLvw3Qu4EGhf3KS/ECwd5cUAY2A==
+  dependencies:
+    "@types/bluebird" "*"
+    "@types/node" "*"
+
 "@types/anymatch@*":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
@@ -674,6 +715,11 @@
   integrity sha512-t4CoEokHTfcyfb4hUaF9oOHu9RmmNWnm1CP0YmMqOOfClKascOmvlEM736vlqeScuGvBDsHkf8R2INd4DWreQA==
   dependencies:
     "@babel/types" "^7.3.0"
+
+"@types/bluebird@*":
+  version "3.5.32"
+  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.32.tgz#381e7b59e39f010d20bbf7e044e48f5caf1ab620"
+  integrity sha512-dIOxFfI0C+jz89g6lQ+TqhGgPQ0MxSnh/E4xuC0blhFtyW269+mPG5QeLgbdwst/LvdP8o1y0o/Gz5EHXLec/g==
 
 "@types/body-parser@*":
   version "1.19.0"
@@ -1157,14 +1203,14 @@ ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-amqp-connection-manager@^3.2.0:
+amqp-connection-manager@^3.0.0, amqp-connection-manager@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/amqp-connection-manager/-/amqp-connection-manager-3.2.0.tgz#83534360533a48183113f8213af0d230c7b8d461"
   integrity sha512-CnxBqUXd6ft4DbGs8YXNp0hDZgWiDQAghxG6JRJuxGbGEQdAjsb4oRR9PWBqO5V/Gssp7lDKigXX+DtSczID2w==
   dependencies:
     promise-breaker "^5.0.0"
 
-amqplib@^0.5.6:
+amqplib@^0.5.3, amqplib@^0.5.6:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/amqplib/-/amqplib-0.5.6.tgz#86a7850f4f39c568eaa0dd0300ef374e17941cf4"
   integrity sha512-J4TR0WAMPBHN+tgTuhNsSObfM9eTVTZm/FNw0LyaGfbiLsBxqSameDNYpChUFXW4bnTKHDXy0ab+nuLhumnRrQ==
@@ -4759,6 +4805,11 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.1.tgz#d7be34dfa3105b91494c3147089315eff8874b01"
   integrity sha512-isWHgVjnFjh2x2yuJ/tj3JbwoHu3UC2dX5G/88Cm24yB6YopVgxvBObDY7n5xW6ExmFhJpSEQqFPvq9zaXc8Jw==
 
+nanoid@^2.1.0:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.1.11.tgz#ec24b8a758d591561531b4176a01e3ab4f0f0280"
+  integrity sha512-s/snB+WGm6uwi0WjsZdaVcuf3KJXlfGl2LcxgwkEwJF0D/BWzVWAZW/XY4bFaiR7s0Jk3FPvlnepg1H1b1UwlA==
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -5980,6 +6031,13 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+
+shortid@^2.2.14:
+  version "2.2.15"
+  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.15.tgz#2b902eaa93a69b11120373cd42a1f1fe4437c122"
+  integrity sha512-5EaCy2mx2Jgc/Fdn9uuDuNIIfWBpzY4XIlhoqtXF6qsf+/+SGZ+FxDdX/ZsMZiWupIWNqAEmiNY4RC+LSmCeOw==
+  dependencies:
+    nanoid "^2.1.0"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.3"

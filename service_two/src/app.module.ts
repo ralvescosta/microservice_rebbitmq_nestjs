@@ -2,21 +2,20 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
 
 @Module({
   imports: [
-    ClientsModule.register([
-      {
-        name: 'HELLO_SERVICE', transport: Transport.RMQ,
-        options: {
-          urls: ['amqp://localhost:5672'],
-          queue: 'service_one',
-          queueOptions: {
-            durable: false
-          },
+    RabbitMQModule.forRoot(RabbitMQModule, {
+      exchanges: [
+        {
+          name: 'teste',
+          type: 'direct',
         },
-      },
-    ]),
+      ],
+
+      uri: 'amqp://localhost:5672',
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
